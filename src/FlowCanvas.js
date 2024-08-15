@@ -24,6 +24,18 @@ const FlowCanvas = () => {
     (params) => setEdges((eds) => addEdge(params, eds)),
     []
   );
+  const openModal = useCallback((id) => {
+    setNodes((nds) => {
+      const node = nds.find((n) => n.id === id);
+      if (node) {
+        setSelectedNode(node);
+        setModalIsOpen(true);
+      } else {
+        console.error('Node not found with id:', id);
+      }
+      return nds;
+    });
+  }, []);
 
   const addCard = useCallback(() => {
     const id = `${nodeId}`;
@@ -67,18 +79,7 @@ const FlowCanvas = () => {
     []
   );
 
-  const openModal = useCallback((id) => {
-    setNodes((nds) => {
-      const node = nds.find((n) => n.id === id);
-      if (node) {
-        setSelectedNode(node);
-        setModalIsOpen(true);
-      } else {
-        console.error('Node not found with id:', id);
-      }
-      return nds;
-    });
-  }, []);
+
 
   const closeModal = () => {
     setModalIsOpen(false);
