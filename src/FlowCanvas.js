@@ -20,10 +20,6 @@ const FlowCanvas = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedNode, setSelectedNode] = useState(null);
 
-  const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
-    []
-  );
   const openModal = useCallback((id) => {
     setNodes((nds) => {
       const node = nds.find((n) => n.id === id);
@@ -67,7 +63,12 @@ const FlowCanvas = () => {
 
     setNodes((nds) => [...nds, newNode]);
     setNodeId((prevId) => prevId + 1);
-  }, [nodeId]);
+  }, [nodeId, openModal]);
+
+  const onConnect = useCallback(
+    (params) => setEdges((eds) => addEdge(params, eds)),
+    []
+  );
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
@@ -78,8 +79,6 @@ const FlowCanvas = () => {
     (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
     []
   );
-
-
 
   const closeModal = () => {
     setModalIsOpen(false);
