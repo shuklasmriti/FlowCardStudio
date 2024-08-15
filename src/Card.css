@@ -1,0 +1,23 @@
+.card-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .card {
+    cursor: move;
+  }
+  
+  .popup {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
