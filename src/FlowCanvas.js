@@ -21,6 +21,7 @@ const FlowCanvas = () => {
   const [selectedNode, setSelectedNode] = useState(null);
 
   const openModal = useCallback((id) => {
+    console.log("Modal opening for node id:", id); 
     setNodes((nds) => {
       const node = nds.find((n) => n.id === id);
       if (node) {
@@ -135,6 +136,8 @@ const FlowCanvas = () => {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
+          panOnScroll={true}
+          zoomOnScroll={true}
           style={{ width: '100%', height: '90vh' }}
         >
           <Background />

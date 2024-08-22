@@ -26,6 +26,7 @@
   background-color: #0056b3;
 }
 
+/* Card Content */
 .card-content {
   padding: 10px;
   background-color: #ffffff;
@@ -80,6 +81,7 @@ position: relative !important
   width: 300px;
   max-width: 80%;
   z-index: 100;
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -92,6 +94,7 @@ position: relative !important
   z-index: 99;
 }
 
+/* Close Button Styles */
 .modal-close-button {
   margin-top: 20px;
   padding: 8px 16px;
@@ -104,4 +107,36 @@ position: relative !important
 
 .modal-close-button:hover {
   background-color: #c82333;
+}
+
+/* Responsive Design Tweaks */
+@media (max-width: 768px) {
+  .add-card-button {
+    top: 5px;
+    left: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .card-content button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 100%;
+  }
 }

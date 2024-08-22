@@ -8,7 +8,7 @@ function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="App">
-        <h1>Drag and Drop UI</h1>
+        <h1>Welcome to Flow-Card-Studio!</h1>
         <FlowCanvas />
       </div>
     </DndProvider>
